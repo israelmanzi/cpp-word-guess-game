@@ -31,7 +31,8 @@ void guessChar(string &word, int length)
 
     for (int i = lives; i >= 0; i--)
     {
-        cout << "You have " << i << " lives left" << endl << endl;
+        cout << "You have " << i << " lives left" << endl
+             << endl;
         cout << "Guess a letter: ";
         cin >> guess;
 
@@ -45,19 +46,22 @@ void guessChar(string &word, int length)
 
         if (retString == word)
         {
-            cout << "==============================OUTPUT==============================" << endl << endl;
+            cout << "==============================OUTPUT==============================" << endl
+                 << endl;
             cout << "You win!" << endl;
             cout << "The word was " << word << endl;
 
             break;
         }
 
-        cout << retString << endl <<endl;
+        cout << retString << endl
+             << endl;
     }
 
     if (retString != word)
     {
-        cout << "==============================OUTPUT==============================" << endl << endl;
+        cout << "==============================OUTPUT==============================" << endl
+             << endl;
         cout << "You lose!" << endl;
         cout << "The word was " << word << endl;
     }
@@ -107,10 +111,12 @@ void loopPerform(string *arrSelect, int arrLength)
         playAgain = performGuess(arrSelect, arrLength);
     }
 
-    cout << "==============================GOODBYE==============================" << endl << endl;
+    cout << "==============================GOODBYE==============================" << endl
+         << endl;
 }
 
-void returnStringItems(string *arr, int length){
+void returnStringItems(string *arr, int length)
+{
     string retString = "";
 
     for (int i = 0; i < length; i++)
@@ -118,24 +124,28 @@ void returnStringItems(string *arr, int length){
         retString += arr[i] + ", ";
     }
 
-    cout << "Category items: {" << retString << "}" << endl << endl;
+    cout << "Category items: {" << retString << "}" << endl
+         << endl;
 }
 
 int main()
 {
     srand(time(NULL));
 
-    cout << "==============================WELCOME==============================" << endl << endl;
+    cout << "==============================WELCOME==============================" << endl
+         << endl;
 
     int length;
 
     int category;
 
-    cout << "Categories: " << endl << endl;
+    cout << "Categories: " << endl
+         << endl;
 
     cout << "1. Epl Teams" << endl;
     cout << "2. Animals" << endl;
-    cout << "3. Footballers" << endl << endl;
+    cout << "3. Footballers" << endl
+         << endl;
 
     cout << "Select a category: ";
 
@@ -153,9 +163,9 @@ int main()
         break;
     case 2:
         length = sizeof(animals) / sizeof(animals[0]);
-        
+
         returnStringItems(animals, length);
-        
+
         loopPerform(animals, length);
 
         break;
